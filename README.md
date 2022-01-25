@@ -7,3 +7,5 @@ Small application to emulate sensors in an MQTT environment
 * Python 3
 * Qt5 --> PyQt5
 * PyInstaller
+* MQTT --> Paho
+* TLS
