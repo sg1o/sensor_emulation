@@ -61,34 +61,38 @@ def send(type, message):
     '''
 
     if type == 0:
-        MQTT_MSG = message
-        topic = "piso" + str(piso) + "/zona" + str(zone) + "/temp1"
+        MQTT_MSG = str(temp_object_id) + "|" + str(message)
+        topic = "/" + str(apikey) + "/" + str(temp_device_id) + "/attrs"
         path_to_file = temp_log
-        logging(str(MQTT_MSG), path_to_file) 
+        logging(str(MQTT_MSG) + " : To topic -->" + str(topic), path_to_file) 
         ret = mqtt_client.publish(topic, MQTT_MSG)
+
     elif type == 1: 
-        MQTT_MSG = message
-        topic = "piso" + str(piso) + "/zona" + str(zone) + "/hum1"
+        MQTT_MSG = str(hum_object_id) + "|" + str(message)
+        topic = "/" + str(apikey) + "/" + str(hum_device_id) + "/attrs"
         path_to_file = hum_log
-        logging(str(MQTT_MSG), path_to_file) 
+        logging(str(MQTT_MSG) + " : To topic -->" + str(topic), path_to_file) 
         ret = mqtt_client.publish(topic, MQTT_MSG)
+
     elif type == 2:
-        MQTT_MSG = message
-        topic = "piso" + str(piso) + "/zona" + str(zone) + "/power1"
+        MQTT_MSG = str(power_object_id) + "|" + str(message)
+        topic = "/" + str(apikey) + "/" + str(power_device_id) + "/attrs"
         path_to_file = cons_log
-        logging(str(MQTT_MSG), path_to_file) 
+        logging(str(MQTT_MSG) + " : To topic -->" + str(topic), path_to_file) 
         ret = mqtt_client.publish(topic, MQTT_MSG)
+
     elif type == 3:
-        MQTT_MSG = message
-        topic = "piso" + str(piso) + "/zona" + str(zone) + "/presen1"
+        MQTT_MSG = str(presen_object_id) + "|" + str(message)
+        topic = "/" + str(apikey) + "/" + str(presen_device_id) + "/attrs"
         path_to_file = presence_log
-        logging(str(MQTT_MSG), path_to_file) 
+        logging(str(MQTT_MSG) + " : To topic -->" + str(topic), path_to_file) 
         ret = mqtt_client.publish(topic, MQTT_MSG)
+
     elif type == 4:
-        MQTT_MSG = message
-        topic = "piso" + str(piso) + "/zona" + str(zone) + "/luz1"
+        MQTT_MSG = str(luz_object_id) + "|" + str(message)
+        topic = "/" + str(apikey) + "/" + str(luz_device_id) + "/attrs"
         path_to_file = lum_log
-        logging(str(MQTT_MSG), path_to_file) 
+        logging(str(MQTT_MSG) + " : To topic -->" + str(topic), path_to_file) 
         ret = mqtt_client.publish(topic, MQTT_MSG)
     else:
         print("[!]Unexpected type...")

@@ -40,7 +40,7 @@ temp_unit = ' C'
 actual_hum = 50
 hum_unit = ' %'
 
-'''Variable for luminity'''
+'''Variable for luminosity'''
 max_lum = 3000
 lum_unit = ' lm'
 
@@ -51,6 +51,27 @@ hum_interval = None
 '''MQTT paho Global Variables'''
 broker = str(parser["Settings"]["IP"])
 port  = int(parser["Settings"]["PORT"])
+
+
+'''Topic Config'''
+apikey = str(parser["Settings"]["apikey"])
+
+temp_object_id = str(parser["Settings"]["temp_object_id"])
+temp_device_id = str(parser["Settings"]["temp_device_id"])
+
+
+hum_object_id = str(parser["Settings"]["hum_object_id"])
+hum_device_id = str(parser["Settings"]["hum_device_id"])
+
+power_object_id = str(parser["Settings"]["power_object_id"])
+power_device_id = str(parser["Settings"]["power_device_id"])
+
+presen_object_id = str(parser["Settings"]["presen_object_id"])
+presen_device_id = str(parser["Settings"]["presen_device_id"])
+
+luz_object_id = str(parser["Settings"]["luz_object_id"])
+luz_device_id = str(parser["Settings"]["luz_device_id"])
+
 
 '''MQTT CONNECTION'''
 
