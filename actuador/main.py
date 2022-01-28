@@ -1,3 +1,4 @@
+from http.client import OK
 import paho.mqtt.client as mqtt
 import ssl
 import signal
@@ -12,7 +13,7 @@ signal.signal(signal.SIGINT, signal_handler)
 QOS = 2
 HOST = "192.168.0.22"
 PORT = 8883
-topic = "actuador"
+topic = "actuador" # /testingSCO/
 KEEPALIVE = 9999
 persiana = False
 luz = False
@@ -27,51 +28,54 @@ def on_connect(client, userdata, flags, rc):
     client.subscribe("actuador")
 
 def offPersiana():
-    os.system("clear")
+    #os.system("clear")
     print("[!]Cerrando persiana...\n\n")
     file = open("asciiArt/persianaCerrada", 'r')
     text = file.read()
     print(text, end='\n\n')
 
 def onPersiana():
-    os.system("clear")
+    #os.system("clear")
     print("[!]Abriendo persiana...\n\n")
     file = open("asciiArt/persianaAbierta", 'r')
     text = file.read()
     print(text, end='\n\n')
 
-def onLigth():
-    os.system("clear")
+def lightOn():
+    #os.system("clear")
     print("[!]Encendiendo luz...\n\n")
     file = open("asciiArt/luzEncendida", 'r')
     text = file.read()
     print(text, end='\n\n')
 
-def offLigth():
-    os.system("clear")
+def lightOff():
+    #os.system("clear")
     print("[!]Apagando luz...\n\n")
     file = open("asciiArt/luzApagada", 'r')
     text = file.read()
     print(text, end='\n\n')
 
+def ok(msg):
+    msg = id@command | command OK
+    msg--> mqtt pub con topic
 
 def on_message(mclient, user, msg):
     global luz, persiana
     entrada = msg.payload.decode('utf-8')
-
-    if  "offLigth" in entrada and luz:
-        offLigth()
+    ok(msg)
+    if  "lightOff" in entrada and luz:
+        lightOff()
         luz = False
 
-    if "onLigth" in entrada and not luz:
-        onLigth()
+    if "lightOn" in entrada and not luz:
+        lightOn()
         luz = True
 
-    if "onPersiana" in entrada and not persiana:
+    if "persianaOpen" in entrada and not persiana:
         onPersiana()
         persiana = True
 
-    if "offPersiana" in entrada and persiana:
+    if "persianaClose" in entrada and persiana:
         offPersiana()
         persiana = False
 
@@ -92,7 +96,7 @@ def main():
         client.tls_insecure_set(True)
 
         
-        client.subscribe(("actuador", QOS))
+        client.subscribe((topic, QOS))
         client.connect(HOST, PORT, keepalive=KEEPALIVE)
 
     except:

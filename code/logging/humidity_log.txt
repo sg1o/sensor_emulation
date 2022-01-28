@@ -21,3 +21,5 @@
 1643298939.1083941 : hum|52 %: To topic -->/testingSCO/Hum001/attrs
 1643298941.108034 : hum|54 %: To topic -->/testingSCO/Hum001/attrs
 1643298964.0811512 : hum|47 %: To topic -->/testingSCO/Hum001/attrs
+1643308296.993424 : hum|51 % : To topic -->/testingSCO/Hum001/attrs
+1643308297.9933825 : hum|48 % : To topic -->/testingSCO/Hum001/attrs

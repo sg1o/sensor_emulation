@@ -9,3 +9,4 @@
 1643298973.9034915 : power|44 kw: To topic -->/testingSCO/Power001/attrs
 1643298975.0317118 : power|44 kw: To topic -->/testingSCO/Power001/attrs
 1643298976.8630164 : power|44 kw: To topic -->/testingSCO/Power001/attrs
+1643308301.0993266 : power|1 kw : To topic -->/testingSCO/Power001/attrs

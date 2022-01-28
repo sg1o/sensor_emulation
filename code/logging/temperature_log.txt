@@ -28,3 +28,5 @@
 1643298951.293995 : temp|20.53  C: To topic -->/testingSCO/Temperatura001/attrs
 1643298953.2941666 : temp|18.56  C: To topic -->/testingSCO/Temperatura001/attrs
 1643298955.294107 : temp|17.13  C: To topic -->/testingSCO/Temperatura001/attrs
+1643308298.1395917 : temp|21.87  C : To topic -->/testingSCO/Temperatura001/attrs
+1643308299.139475 : temp|22.49  C : To topic -->/testingSCO/Temperatura001/attrs

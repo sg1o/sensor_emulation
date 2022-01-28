@@ -228,3 +228,5 @@
 1643298992.4873726 : luz|2940 lm: To topic -->/testingSCO/Luz001/attrs
 1643298992.494219 : luz|2970 lm: To topic -->/testingSCO/Luz001/attrs
 1643298992.5018628 : luz|3000 lm: To topic -->/testingSCO/Luz001/attrs
+1643308303.2124968 : luz|300 lm : To topic -->/testingSCO/Luz001/attrs
+1643308304.3624272 : luz|0 lm : To topic -->/testingSCO/Luz001/attrs

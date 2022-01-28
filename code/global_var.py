@@ -99,7 +99,10 @@ try:
                                 keyfile=key, cert_reqs=ssl.CERT_REQUIRED, ciphers=None)
     
     mqtt_client.tls_insecure_set(True)
+    mqtt_client.username_pw_set("cliente2", "scopass2")
     mqtt_client.connect(broker, port, keepalive=9999)
-except:
+
+except Exception as e:
     print("[!] Problem in client connect...")
+    print(e)
     sys.exit()
